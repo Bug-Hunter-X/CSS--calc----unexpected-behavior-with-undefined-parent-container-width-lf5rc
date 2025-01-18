@@ -1,0 +1,22 @@
+To solve the issue, ensure the parent container has a defined width or height. This can be achieved by setting a `width` or `height` property to the parent element, or by setting a `min-width`, `max-width`, `min-height`, or `max-height` property, depending on your design requirements.  Here is an example of fixing the bug:
+
+/* bug.css */
+.parent {
+  /* Missing width or height property causing the issue */
+}
+
+.child {
+  width: calc(100% - 10px);
+  background-color: lightblue;
+}
+
+/* bugSolution.css */
+.parent {
+  width: 500px; /* Added width to the parent element */
+}
+
+.child {
+  width: calc(100% - 10px);
+  background-color: lightblue;
+}
+In this solution, we've added a width to the parent container, fixing the issue and preventing unexpected behavior in `calc()`.
